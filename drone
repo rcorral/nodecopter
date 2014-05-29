@@ -1,0 +1,20 @@
+#!/usr/bin/env coffee
+
+fs = require 'fs'
+path = require 'path'
+arDrone = require 'ar-drone'
+client  = arDrone.createClient()
+
+# Start stream
+pngStream = client.getPngStream()
+pngStream.on 'data', (data) ->
+    stream = fs.createWriteStream(path.join('./imagefeed/', uniqueFileName()))
+    stream.write(data)
+    stream.end()
+
+uniqueFileName = ->
+    date = new Date()
+    (date.toLocaleDateString() + ' ' + date.toLocaleTimeString())
+        .toLowerCase()
+        .replace(/[^0-9a-z:]+/g, '-')
+        + '.png'

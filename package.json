@@ -1,0 +1,28 @@
+{
+  "name": "jsconfdrone",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "ar-drone": "~0.3.2",
+    "ardrone-webflight": "^0.1.1",
+    "buffy": "0.0.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rcorral/nodecopter.git"
+  },
+  "keywords": [
+    "nodecopter"
+  ],
+  "author": "Rafael Corral",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rcorral/nodecopter/issues"
+  },
+  "homepage": "https://github.com/rcorral/nodecopter"
+}
