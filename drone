@@ -12,6 +12,28 @@ pngStream.on 'data', (data) ->
     stream.write(data)
     stream.end()
 
+
+client.config('video:video_channel', 0)
+
+client.takeoff()
+
+client
+	.after(4000, ->
+		this.up(0.85)
+	)
+	.after(2500, ->
+		this.stop()
+		this.animate 'flipLeft', 250
+	)
+	.after(5000, ->
+		this.stop()
+		this.animate 'phiThetaMixed', 3000
+	)
+	.after(5000, ->
+		this.stop()
+		this.land()
+	)
+
 uniqueFileName = ->
     date = new Date()
     (date.toLocaleDateString() + ' ' + date.toLocaleTimeString())
