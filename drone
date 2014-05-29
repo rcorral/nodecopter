@@ -38,5 +38,4 @@ uniqueFileName = ->
     date = new Date()
     (date.toLocaleDateString() + ' ' + date.toLocaleTimeString())
         .toLowerCase()
-        .replace(/[^0-9a-z:]+/g, '-')
-        + '.png'
+        .replace(/[^0-9a-z:]+/g, '-') + '.png'
